@@ -1,0 +1,37 @@
+$fg-columns : 12;
+
+@mixin grid-sizes( $namespace ) {
+  @for $i from 1 through $fg-columns {
+
+        .col-#{$namespace}-#{$i} {
+          flex-basis: percentage($i / $fg-columns);
+    }
+  }
+}
+
+body { margin: 0; }
+
+div[class*="col-"] {
+  background-clip: content-box;
+  margin: 15px 0;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@include grid-sizes ("xs")
+
+@media (min-width: 768px) {
+  @include grid-sizes ("sm")
+}
+
+@media (min-width: 992px) {
+  @include grid-sizes ("md")
+}
+
+@media (min-width: 1200px) {
+  @include grid-sizes ("lg")
+}

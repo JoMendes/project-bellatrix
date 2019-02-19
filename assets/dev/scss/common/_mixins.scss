@@ -1,0 +1,80 @@
+/*----------------------------------------------------------------
+# Fonts
+----------------------------------------------------------------*/
+
+@mixin main-font-regular() {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 400;
+}
+
+@mixin main-font-bold() {
+	font-family: 'Roboto Slab', sans-serif;
+	font-weight: 700;
+}
+
+@mixin main-font-regular-italic() {
+	font-family: 'Roboto Slab', sans-serif;
+	font-style: italic;
+	font-weight: 400;
+}
+
+@mixin alt-font-bold() {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+/*----------------------------------------------------------------
+# Transitions
+----------------------------------------------------------------*/
+
+@mixin transition($prop, $time, $delay) {
+	-webkit-transition: $prop $time cubic-bezier(0.190, 1.000, 0.220, 1.000) $delay;
+	-o-transition: $prop $time cubic-bezier(0.190, 1.000, 0.220, 1.000) $delay;
+	-moz-transition: $prop $time cubic-bezier(0.190, 1.000, 0.220, 1.000) $delay;
+	transition: $prop $time cubic-bezier(0.190, 1.000, 0.220, 1.000) $delay;
+}
+
+/*----------------------------------------------------------------
+# Troncate
+----------------------------------------------------------------*/
+
+@mixin troncate() {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/*----------------------------------------------------------------
+# List
+----------------------------------------------------------------*/
+
+@mixin unlist() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/*----------------------------------------------------------------
+# Absolute
+----------------------------------------------------------------*/
+
+@mixin abs($top, $right, $bottom, $left) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+/*----------------------------------------------------------------
+# Font Size
+----------------------------------------------------------------*/
+
+@function calculateRem($px) {
+	$remSize: $px / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin fontsize($px) {
+	font-size: calculateRem($px)
+}

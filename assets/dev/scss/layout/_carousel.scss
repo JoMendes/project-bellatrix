@@ -1,0 +1,51 @@
+img {
+	width: 100%;
+}
+
+.carousel {
+	width: 100%;
+
+	figure {
+		position: relative;
+	}
+
+	img,
+	h3,
+	h2,
+	a {
+		@include main-font-regular();
+		text-transform: uppercase;
+	}
+
+	figure figcaption {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		top: 20%;
+		left: 50%;
+	}
+
+	h2 {
+		@include fontsize(10px);
+		top: 20%;
+		margin: 0;
+		
+	}
+
+	h3 {
+		@include main-font-bold();
+		@include fontsize(14px);
+		margin: 14px 0 14px;
+	}
+
+	.button {
+		@include fontsize(10px);
+		top: 52%;
+		margin-left: auto;
+		padding: 8px;
+		border: solid 1px $black;
+		background-color: $white;
+	}
+
+}
